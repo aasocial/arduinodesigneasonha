@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Arduino Image Training Set</folder>
+	<filename>img5.png</filename>
+	<path>/Users/easonha/Desktop/Arduino Image Training Set/img5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>596</width>
+		<height>196</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Battery3</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>53</xmin>
+			<ymin>75</ymin>
+			<xmax>72</xmax>
+			<ymax>127</ymax>
+		</bndbox>
+	</object>
+</annotation>
