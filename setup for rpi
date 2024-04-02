@@ -1,0 +1,60 @@
+# Accurate as of 2nd April, 2024 --> Running VEX V5 Battery Detection Code on Raspberry Pi
+
+# Show your Raspberry Pi OS version.
+cat /etc/os-release
+
+# Update packages on your Raspberry Pi OS.
+sudo apt-get update
+
+# Check your Python version. Version should be under the 3.9 branch.
+python3 --version
+
+# If the version is too new, certain dependencies and libraries are not supported. Follow the instructions below to downgrade/upgrade the python version (instructions taken from https://hub.tcno.co/pi/software/python-update/)
+# Make sure the Pi is up to date
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install packages for downloading python smoothly
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+
+# Here, we use the Downloads folder as it is usually empty
+cd ~/Downloads
+wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tgz
+
+# After the file finishes downloading (takes a long time)
+sudo tar zxf Python-3.9.0.tgz
+cd Python-VERSION
+sudo ./configure --enable-optimizations
+
+# Check how many cores the CPU has. Run the following command and check the number next to "cores"
+lscpu 
+
+# Build python: (replace 4 with the number of cores)
+sudo make -j 4
+
+# Install Python3.9 parallel to current version so that no glitches occur
+sudo make altinstall
+
+# Install virtualenv and upgrade pip.
+python3.9 -m pip install --user --upgrade pip
+python3.9 -m pip install --user virtualenv
+
+# Create a Python virtual environment for Arduino Design file 
+python3 -m venv ~/ad 
+
+# Run this command whenever you open a new Terminal window/tab to activate the environment.
+source ~/ad/bin/activate
+
+# Clone the MediaPipe samples repository with the MediaPipe Raspberry Pi samples.
+git clone https://github.com/aasocial/arduinodesigneasonha.git
+cd arduinodesigneasonha/object_detection_raspberrypi/
+
+# Install dependencies required by the sample
+sh setup.sh
+
+# Run the program!
+
+python3.9 detect.py
+
+# If there is an error in running the program, install the dependencies again:
+sh setup.sh
