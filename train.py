@@ -28,7 +28,7 @@ val_data = object_detector.DataLoader.from_pascal_voc(
 
 spec = model_spec.get('efficientdet_lite0')
 
-model = object_detector.create(train_data, model_spec=spec, batch_size=1, train_whole_model=True, epochs=20, validation_data=val_data)
+model = object_detector.create(training_data=train_data, model_spec=spec, batch_size=1, train_whole_model=True, epochs=20, validation_data=val_data)
 
 model.evaluate(val_data)
 
