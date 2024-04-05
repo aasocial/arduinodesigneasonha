@@ -26,6 +26,9 @@ val_data = object_detector.DataLoader.from_pascal_voc(
     ['Battery1', 'Battery2', 'Battery3', 'Battery4']
 )
 
+print(train_data)
+print(val_data)
+
 spec = model_spec.get('efficientdet_lite0')
 
 model = object_detector.create(train_data, model_spec=spec, batch_size=1, train_whole_model=True, epochs=20, validation_data=val_data)
