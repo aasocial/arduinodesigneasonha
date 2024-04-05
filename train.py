@@ -21,14 +21,14 @@ val_image_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/vi
 val_image_annotations_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/vannotations'
 
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train,
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train,
+    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train',
+    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train',
     ['Battery1', 'Battery2', 'Battery3', 'Battery4']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate,
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate,
+    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate',
+    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate',
     ['Battery1', 'Battery2', 'Battery3', 'Battery4']
 )
 
