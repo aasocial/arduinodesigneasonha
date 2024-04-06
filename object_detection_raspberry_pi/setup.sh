@@ -6,3 +6,4 @@ wget -q -O efficientdet.tflite -q https://storage.googleapis.com/mediapipe-model
 
 sudo apt-get install python3-rpi.gpio
 sudo pip3 install gpiozero
+pip install RPi.GPIO
