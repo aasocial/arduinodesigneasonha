@@ -21,14 +21,14 @@ print()
 
 # Load Dataset
 train_data = object_detector.DataLoader.from_pascal_voc(
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train/images',
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train/annotations',
+    'Arduino_Image_Training_Set/train/images',
+    'Arduino_Image_Training_Set/train/annotations',
     ['Battery1', 'Battery2', 'Battery3', 'Battery4']
 )
 
 val_data = object_detector.DataLoader.from_pascal_voc(
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/images',
-    'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/annotations',
+    'Arduino_Image_Training_Set/validate/images',
+    'Arduino_Image_Training_Set/validate/annotations',
     ['Battery1', 'Battery2', 'Battery3', 'Battery4']
 )
 
