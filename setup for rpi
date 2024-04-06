@@ -54,7 +54,7 @@ sh setup.sh
 
 # Run the program!
 
-python3.9 detect.py
+python3.9 detect.py --model arduino.tflite
 
 # If there is an error in running the program, install the dependencies again:
 sh setup.sh
