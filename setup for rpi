@@ -19,11 +19,11 @@ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev 
 
 # Here, we use the Downloads folder as it is usually empty
 cd ~/Downloads
-wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tgz
 
 # After the file finishes downloading (takes a long time)
-sudo tar zxf Python-3.8.0.tgz
-cd Python-VERSION
+sudo tar zxf Python-3.9.0.tgz
+cd Python-3.9.0
 sudo ./configure --enable-optimizations
 
 # Check how many cores the CPU has. Run the following command and check the number next to "cores"
@@ -36,8 +36,8 @@ sudo make -j 4
 sudo make altinstall
 
 # Install virtualenv and upgrade pip.
-python3.8 -m pip install --user --upgrade pip
-python3.8 -m pip install --user virtualenv
+python3.9 -m pip install --user --upgrade pip
+python3.9 -m pip install --user virtualenv
 
 # Create a Python virtual environment for Arduino Design file 
 python3 -m venv ~/ad 
@@ -47,7 +47,7 @@ source ~/ad/bin/activate
 
 # Clone the MediaPipe samples repository with the MediaPipe Raspberry Pi samples.
 git clone https://github.com/aasocial/arduinodesigneasonha.git
-cd arduinodesigneasonha/object_detection_raspberrypi/
+cd arduinodesigneasonha/object_detection_raspberry_pi/
 
 # Install dependencies required by the sample
 sh setup.sh
