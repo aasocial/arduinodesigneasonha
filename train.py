@@ -14,12 +14,6 @@ tf.get_logger().setLevel('ERROR')
 from absl import logging
 logging.set_verbosity(logging.ERROR)
 
-train_image_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train/images'
-train_image_annotations_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/train/annnotations'
-
-val_image_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/vimage'
-val_image_annotations_dir = 'drive/My Drive/ArduinoS2/Arduino_Image_Training_Set/validate/vannotations'
-
 train_data = object_detector.DataLoader.from_pascal_voc(
     'Arduino_Image_Training_Set/train',
     'Arduino_Image_Training_Set/train',
@@ -37,7 +31,7 @@ print(val_data)
 
 spec = model_spec.get('efficientdet_lite0')
 
-model = object_detector.create(train_data, model_spec=spec, batch_size=4, train_whole_model=True, epochs=20, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=32, train_whole_model=True, epochs=25, validation_data=val_data)
 
 model.evaluate(val_data)
 
