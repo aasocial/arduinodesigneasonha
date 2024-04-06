@@ -52,6 +52,9 @@ cd arduinodesigneasonha/object_detection_raspberry_pi/
 # Install dependencies required by the sample
 sh setup.sh
 
+# Add the downloaded trained machine learning file to the directory:
+cp ~/Downloads/arduino.tflite
+
 # Run the program!
 
 python3.9 detect.py --model arduino.tflite
