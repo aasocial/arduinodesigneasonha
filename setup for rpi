@@ -53,7 +53,7 @@ cd arduinodesigneasonha/object_detection_raspberry_pi/
 sh setup.sh
 
 # Add the downloaded trained machine learning file to the directory:
-cp ~/Downloads/arduino.tflite
+cp ~/Downloads/arduino.tflite .
 
 # Run the program!
 
