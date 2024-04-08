@@ -49,9 +49,9 @@ angle2 = 2+(85/18)
 
 def motorcontrol() -> None:
     global battery_counter
-    if battery_counter == '5':
+    if battery_counter == '4':
         servo1.ChangeDutyCycle(angle2)
-    if battery_counter != "5":
+    if battery_counter != "4":
         servo1.ChangeDutyCycle(angle1)
     battery_counter = 0
 
@@ -173,7 +173,7 @@ def main():
       help='The score threshold of detection results.',
       required=False,
       type=float,
-      default=0.25)
+      default=0.1)
   # Finding the camera ID can be very reliant on platform-dependent methods.
   # One common approach is to use the fact that camera IDs are usually indexed sequentially by the OS, starting from 0.
   # Here, we use OpenCV and create a VideoCapture object for each potential ID with 'cap = cv2.VideoCapture(i)'.
