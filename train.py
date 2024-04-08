@@ -31,7 +31,7 @@ print(val_data)
 
 spec = model_spec.get('efficientdet_lite0')
 
-model = object_detector.create(train_data, model_spec=spec, batch_size=64, train_whole_model=True, epochs=30, validation_data=val_data)
+model = object_detector.create(train_data, model_spec=spec, batch_size=32, train_whole_model=True, epochs=25, validation_data=val_data)
 
 model.evaluate(val_data)
 
