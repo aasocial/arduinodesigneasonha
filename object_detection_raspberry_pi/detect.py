@@ -173,7 +173,7 @@ def main():
       help='The score threshold of detection results.',
       required=False,
       type=float,
-      default=0.205)
+      default=0.15)
   # Finding the camera ID can be very reliant on platform-dependent methods.
   # One common approach is to use the fact that camera IDs are usually indexed sequentially by the OS, starting from 0.
   # Here, we use OpenCV and create a VideoCapture object for each potential ID with 'cap = cv2.VideoCapture(i)'.
@@ -185,13 +185,13 @@ def main():
       help='Width of frame to capture from camera.',
       required=False,
       type=int,
-      default=1920)
+      default=1280)
   parser.add_argument(
       '--frameHeight',
       help='Height of frame to capture from camera.',
       required=False,
       type=int,
-      default=1080)
+      default=720)
   args = parser.parse_args()
 
   run(args.model, int(args.maxResults),
