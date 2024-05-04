@@ -14,30 +14,9 @@ python3 --version
 sudo apt-get update
 sudo apt-get upgrade
 
-# Install packages for downloading python smoothly
-sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
-
-# Here, we use the Downloads folder as it is usually empty
-cd ~/Downloads
-wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tgz
-
-# After the file finishes downloading (takes a long time)
-sudo tar zxf Python-3.9.0.tgz
-cd Python-3.9.0
-sudo ./configure --enable-optimizations
-
-# Check how many cores the CPU has. Run the following command and check the number next to "cores"
-lscpu 
-
-# Build python: (replace 4 with the number of cores)
-sudo make -j 4
-
-# Install Python3.9 parallel to current version so that no glitches occur
-sudo make altinstall
-
 # Install virtualenv and upgrade pip.
-python3.9 -m pip install --user --upgrade pip
-python3.9 -m pip install --user virtualenv
+python -m pip install --user --upgrade pip
+python -m pip install --user virtualenv
 
 # Create a Python virtual environment for Arduino Design file 
 python3 -m venv ~/ad 
@@ -52,12 +31,9 @@ cd arduinodesigneasonha/object_detection_raspberry_pi/
 # Install dependencies required by the sample
 sh setup.sh
 
-# Add the downloaded trained machine learning file to the directory:
-cp ~/Downloads/arduino.tflite .
-
 # Run the program!
 
-python3.9 detect.py --model arduino.tflite
+python detectbattery.py
 
 # If there is an error in running the program, install the dependencies again:
 sh setup.sh
