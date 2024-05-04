@@ -31,8 +31,12 @@ cd arduinodesigneasonha/object_detection_raspberry_pi/
 # Install dependencies required by the sample
 sh setup.sh
 
-# Run the program!
+Servo Motor Configuration:
+PWM (orange wire) = port 12 ==> 32nd pin,
+Vcc (red wire) = 5V
+Ground (brown wire) = Gnd
 
+# Run the program!
 python detectbattery.py
 
 # If there is an error in running the program, install the dependencies again:
