@@ -11,10 +11,10 @@ START_TIME = time.time()
 battery_counter = False
 
 # Setting up the MG995 servo motor
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(13, GPIO.out)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11, GPIO.OUT)
 
-servo = GPIO.PWM(13, 50) # PWN frequency is 50Hz
+servo = GPIO.PWM(11, 50) # PWN frequency is 50Hz
 servo.start(0)
 
 def run(camera_id: int, width: int, height: int) -> None:
@@ -83,7 +83,7 @@ def run(camera_id: int, width: int, height: int) -> None:
 
         print("blue: " + str(blue_mean)+"\ngreen: " + str(green_mean) + "\nred: " + str(red_mean)+"\n" + str(shigan) + "\n")
 
-        if blue_mean > 27 and green_mean > 27:
+        if blue_mean > 68 and green_mean > 79:
             battery_counter = True
             shigan += 1
         else:
@@ -91,14 +91,14 @@ def run(camera_id: int, width: int, height: int) -> None:
             battery_counter = False
 
         angle_scale = 18
-        if battery_counter == True and shigan > 22:
+        if battery_counter == True and shigan > 40:
             servo.ChangeDutyCycle(85/angle_scale)
 
         if current_frame is not None:
             cv2.imshow("object_detection", current_frame)
 
         if cv2.waitKey(1) == 27:
-            servo.ChangeDutyCycle(-85/angle_scale)
+            servo.ChangeDutyCycle(85/angle_scale)
             break
 
     cap.release()
