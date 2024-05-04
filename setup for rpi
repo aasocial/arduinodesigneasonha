@@ -6,7 +6,7 @@ cat /etc/os-release
 # Update packages on your Raspberry Pi OS.
 sudo apt-get update
 
-# Check your Python version. Version should be under the 3.9 branch.
+# Check your Python version. Version should be newer than the 3.9 branch.
 python3 --version
 
 # If the version is too new, certain dependencies and libraries are not supported. Follow the instructions below to downgrade/upgrade the python version (instructions taken from https://hub.tcno.co/pi/software/python-update/)
