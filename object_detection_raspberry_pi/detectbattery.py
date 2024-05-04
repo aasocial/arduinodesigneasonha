@@ -83,7 +83,7 @@ def run(camera_id: int, width: int, height: int) -> None:
 
         print("blue: " + str(blue_mean)+"\ngreen: " + str(green_mean) + "\nred: " + str(red_mean)+"\n" + str(shigan) + "\n")
 
-        if blue_mean > 68 and green_mean > 79:
+        if blue_mean > 68 and green_mean > 88:
             battery_counter = True
             shigan += 1
         else:
